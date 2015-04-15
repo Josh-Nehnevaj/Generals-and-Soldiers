@@ -8,31 +8,36 @@
   <sprites name="sprites">
     <sprite>sprites\spr_placeholder</sprite>
     <sprite>sprites\spr_bomb</sprite>
-    <sprite>sprites\spr_enemy</sprite>
-    <sprite>sprites\spr_general</sprite>
-    <sprite>sprites\spr_generalFiring</sprite>
-    <sprite>sprites\spr_soldier1</sprite>
-    <sprite>sprites\spr_soldier1Firing</sprite>
-    <sprite>sprites\spr_soldier2</sprite>
-    <sprite>sprites\spr_soldier2Firing</sprite>
-    <sprite>sprites\spr_soldier3</sprite>
-    <sprite>sprites\spr_soldier3Firing</sprite>
-    <sprite>sprites\spr_soldier4</sprite>
-    <sprite>sprites\spr_soldier4Firing</sprite>
     <sprite>sprites\spr_exploreGeneral</sprite>
     <sprite>sprites\spr_stop</sprite>
     <sprite>sprites\spr_battle</sprite>
     <sprite>sprites\spr_smallVictory</sprite>
-    <sprite>sprites\spr_gear</sprite>
-    <sprite>sprites\sp_pause</sprite>
-    <sprite>sprites\spr_quit</sprite>
-    <sprite>sprites\spr_restart</sprite>
-    <sprite>sprites\spr_back</sprite>
-    <sprite>sprites\spr_start</sprite>
     <sprites name="Jordan">
       <sprite>sprites\spr_Highlight</sprite>
       <sprite>sprites\spr_Board</sprite>
       <sprite>sprites\temp</sprite>
+    </sprites>
+    <sprites name="Buttons">
+      <sprite>sprites\sp_pause</sprite>
+      <sprite>sprites\spr_gear</sprite>
+      <sprite>sprites\spr_quit</sprite>
+      <sprite>sprites\spr_back</sprite>
+      <sprite>sprites\spr_restart</sprite>
+      <sprite>sprites\spr_start</sprite>
+    </sprites>
+    <sprites name="Combat">
+      <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_general</sprite>
+      <sprite>sprites\spr_generalFiring</sprite>
+      <sprite>sprites\spr_soldier1</sprite>
+      <sprite>sprites\spr_soldier1Firing</sprite>
+      <sprite>sprites\spr_soldier2</sprite>
+      <sprite>sprites\spr_soldier2Firing</sprite>
+      <sprite>sprites\spr_soldier3</sprite>
+      <sprite>sprites\spr_soldier3Firing</sprite>
+      <sprite>sprites\spr_soldier4</sprite>
+      <sprite>sprites\spr_soldier4Firing</sprite>
+      <sprite>sprites\spr_enemyGeneral</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -63,36 +68,42 @@
     <font>fonts\font0</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_exploreGeneral</object>
-    <object>objects\obj_battle1</object>
-    <object>objects\obj_battle2</object>
-    <object>objects\obj_battle3</object>
-    <object>objects\obj_battle4</object>
     <object>objects\obj_general</object>
     <object>objects\obj_enemyGeneral</object>
     <object>objects\obj_realEnemy</object>
     <object>objects\obj_realSoldier</object>
     <object>objects\obj_stop</object>
     <object>objects\obj_controller</object>
-    <object>objects\obj_numSoldiers</object>
-    <object>objects\obj_smallVictory</object>
-    <object>objects\obj_start</object>
-    <object>objects\obj_gear</object>
-    <object>objects\obj_pause</object>
-    <object>objects\obj_back</object>
-    <object>objects\obj_restart</object>
-    <object>objects\obj_quit</object>
     <object>objects\obj_bomb</object>
     <object>objects\obj_victoryOrDefeat</object>
-    <object>objects\obj_mouse_control</object>
     <objects name="Jordan">
       <object>objects\obj_EnemyUnit</object>
+      <object>objects\obj_enemyGeneralBoard</object>
       <object>objects\obj_generalBoard</object>
       <object>objects\obj_PlayerUnit</object>
       <object>objects\obj_Board</object>
       <object>objects\obj_Destination</object>
       <object>objects\obj_Highlight</object>
     </objects>
+    <objects name="Explore">
+      <object>objects\obj_exploreGeneral</object>
+      <object>objects\obj_battle1</object>
+      <object>objects\obj_battle2</object>
+      <object>objects\obj_battle3</object>
+      <object>objects\obj_battle4</object>
+      <object>objects\obj_numSoldiers</object>
+      <object>objects\obj_smallVictory</object>
+      <object>objects\obj_mouse_control</object>
+    </objects>
+    <objects name="Buttons">
+      <object>objects\obj_start</object>
+      <object>objects\obj_gear</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_back</object>
+      <object>objects\obj_restart</object>
+      <object>objects\obj_quit</object>
+    </objects>
+    <object>objects\object28</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

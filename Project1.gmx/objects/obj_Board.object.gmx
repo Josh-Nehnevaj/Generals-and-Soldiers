@@ -3,7 +3,7 @@
   <spriteName>spr_Board</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>50</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -37,10 +37,20 @@ for ( i = 0; i &lt; 11; i++ )
    }
 
 // Create object on board with location xx and yy being set to that object
-board[0,6] = newUnit( 0, 6, obj_EnemyUnit );
-board[0,4] = newUnit( 0, 4, obj_EnemyUnit );
-board[0,5] = newUnit( 0, 5, obj_bomb );
-board[0,3] = newUnit( 0, 3, obj_generalBoard );
+if room==rm_1
+    {
+    board[0,6] = newUnit( 0, 6, obj_EnemyUnit );
+    board[0,5] = newUnit( 0, 5, obj_EnemyUnit );
+    board[0,1] = newUnit( 0, 1, obj_enemyGeneralBoard );
+    board[0,3] = newUnit( 0, 3, obj_generalBoard );
+    }
+if room==rm_2
+    {
+    board[10,6] = newUnit( 10, 6, obj_EnemyUnit );
+    board[10,5] = newUnit( 10, 5, obj_EnemyUnit );
+    board[10,1] = newUnit( 10, 1, obj_enemyGeneralBoard );
+    board[10,3] = newUnit( 10, 3, obj_generalBoard );
+    }
 
 </string>
           </argument>

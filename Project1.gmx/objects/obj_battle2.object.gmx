@@ -57,7 +57,7 @@ if global.second=0
             <string>//checks if battle was alread y fought, if yes then changes sprite
 
 if (global.second=1)
-    sprite_index=spr_placeholder
+    sprite_index=spr_tombstone
 </string>
           </argument>
         </arguments>

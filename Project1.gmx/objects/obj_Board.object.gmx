@@ -38,9 +38,10 @@ for ( i = 0; i &lt; 11; i++ )
 
 // Create object on board with location xx and yy being set to that object
 board[0,6] = newUnit( 0, 6, obj_EnemyUnit );
-board[0,3] = newUnit( 0, 3, obj_EnemyUnit );
-board[5,4] = newUnit( 5, 4, obj_generalBoard );
-//board[4,5] = newUnit( 4, 5, obj_EnemyUnit );
+board[0,4] = newUnit( 0, 4, obj_EnemyUnit );
+board[0,5] = newUnit( 0, 5, obj_bomb );
+board[0,3] = newUnit( 0, 3, obj_generalBoard );
+
 </string>
           </argument>
         </arguments>

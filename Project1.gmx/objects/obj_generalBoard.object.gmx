@@ -25,24 +25,254 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
+            <string>image_speed = 0;   
 
+// Move down one
+move[0,0] = 0;
+move[0,1] = 1;
+
+// Move left one
+move[1,0] = -1;
+move[1,1] = 0;
+
+// Move up one
+move[2,0] = 0;
+move[2,1] = -1;
+
+// Move right one
+move[3,0] = 1;
+move[3,1] = 0;
+
+// Move down twice
+move[4,0] = 0;
+move[4,1] = 2;
+
+// Move left twice
+move[5,0] = -2;
+move[5,1] = 0;
+
+// Move up twice
+move[6,0] = 0;
+move[6,1] = -2;
+
+// Move right twice
+move[7,0] = 2;
+move[7,1] = 0;
+
+// Move down right
+move[8,0] = 1;
+move[8,1] = 1;
+
+// Move down left
+move[9,0] = -1;
+move[9,1] = 1;
+
+// Move up left
+move[10,0] = -1;
+move[10,1] = -1;
+
+// Move up right
+move[11,0] = 1;
+move[11,1] = -1;
+
+possible_moves = 12;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Destination">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ( speed != 0 )
+   {
+if ( global.choice == 1 )
+   {
+   newx = obj_Destination.x + 200;
+   newy = obj_Destination.y + 100;
+   
+   moveDiagonal( newx, newy, self.id );
+   }
+else if ( global.choice == 2 )
+   {
+   newx = obj_Destination.x - 100;
+   newy = obj_Destination.y - 200;
+   
+   moveDiagonal( newx, newy, self.id );   
+   }  
+else if ( global.choice == 3 )
+   {
+   newx = obj_Destination.x - 200;
+   newy = obj_Destination.y + 100;
+   
+   moveDiagonal( newx, newy, self.id ); 
+   }
+else if ( global.choice == 4 )
+   {
+   newx = obj_Destination.x + 100;
+   newy = obj_Destination.y - 200;
+   
+   moveDiagonal( newx, newy, self.id ); 
+   }
+else if ( global.choice == 5 )
+   {
+   newx = obj_Destination.x - 200;
+   newy = obj_Destination.y - 100;
+   
+   moveDiagonal( newx, newy, self.id ); 
+   }   
+else if ( global.choice == 6 )
+   {
+   newx = obj_Destination.x + 100;
+   newy = obj_Destination.y + 200;
+   
+   moveDiagonal( newx, newy, self.id ); 
+   }
+else if ( global.choice == 7 )
+   {
+   newx = obj_Destination.x + 200;
+   newy = obj_Destination.y - 100;
+   
+   moveDiagonal( newx, newy, self.id ); 
+   }
+else if ( global.choice == 8 )
+   {
+   newx = obj_Destination.x - 100;
+   newy = obj_Destination.y + 200;
+   
+   moveDiagonal( newx, newy, self.id ); 
+   }
+else
+   {
+   speed = 0;
+
+   with( obj_Destination )
+      {
+      instance_destroy();
+      }
+   }
+global.choice = 0;
+   }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with ( obj_Highlight )
+   {
+   instance_destroy()
+   }
+
+if speed=0
+ highlightPossibleMoves( self.id );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
 var i
+i=0
 var g
 var h
 
 var xx
 var yy
-xx=0
-yy=3
+xx=(x-50)/100
+yy=(y-50)/100
 
 //checks which side of the battle the general is on and spawns troops on that side
 
 global.numSoldiers=score
-xxx=0
-yyy=3
-if obj_Board.board[xxx, yyy]==noone
-    obj_Board.board[xxx, yyy] = newUnit(xxx, yyy, obj_PlayerUnit)
+unitToCreatex=0
+unitToCreatey=0
+
+while (i&lt;score)
+    {
+    if  obj_Board.board[unitToCreatex, unitToCreatey] == noone
+        {    
+        obj_Board.board[unitToCreatex, unitToCreatey] = newUnit(unitToCreatex, unitToCreatey, obj_PlayerUnit)
+        i+=4
+        
+        if unitToCreatey&lt;6
+            unitToCreatey++
+        else
+            {
+            unitToCreatex++
+            unitToCreatey=0
+            }
+        }
+    else
+        {
+        unitToCreatey++
+        if unitToCreatey&gt;=7
+            {
+            unitToCreatex++
+            unitToCreatey=0
+            }
+        }
+    }
+    /*
+    else
+        {
+        unitToCreatey++
+        
+        if unitToCreatey&gt;7
+             {
+            unitToCreatex++
+            unitToCreatey=0
+            }
+        }
+    }
+        
 /*
 //left side
 if (xx==0 &amp;&amp; yy==3)
@@ -252,177 +482,7 @@ else if (x&lt;650 &amp;&amp; y&gt;550)
             g+=100;
         }
     }
-*/    
-
-// Move down one
-move[0,0] = 0;
-move[0,1] = 1;
-
-// Move left one
-move[1,0] = -1;
-move[1,1] = 0;
-
-// Move up one
-move[2,0] = 0;
-move[2,1] = -1;
-
-// Move right one
-move[3,0] = 1;
-move[3,1] = 0;
-
-// Move down twice
-move[4,0] = 0;
-move[4,1] = 2;
-
-// Move left twice
-move[5,0] = -2;
-move[5,1] = 0;
-
-// Move up twice
-move[6,0] = 0;
-move[6,1] = -2;
-
-// Move right twice
-move[7,0] = 2;
-move[7,1] = 0;
-
-// Move down right
-move[8,0] = 1;
-move[8,1] = 1;
-
-// Move down left
-move[9,0] = -1;
-move[9,1] = 1;
-
-// Move up left
-move[10,0] = -1;
-move[10,1] = -1;
-
-// Move up right
-move[11,0] = 1;
-move[11,1] = -1;
-
-possible_moves = 12;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Destination">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if ( speed != 0 )
-   {
-if ( global.choice == 1 )
-   {
-   newx = obj_Destination.x + 200;
-   newy = obj_Destination.y + 100;
-   
-   moveDiagonal( newx, newy, self.id );
-   }
-else if ( global.choice == 2 )
-   {
-   newx = obj_Destination.x - 100;
-   newy = obj_Destination.y - 200;
-   
-   moveDiagonal( newx, newy, self.id );   
-   }  
-else if ( global.choice == 3 )
-   {
-   newx = obj_Destination.x - 200;
-   newy = obj_Destination.y + 100;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 4 )
-   {
-   newx = obj_Destination.x + 100;
-   newy = obj_Destination.y - 200;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 5 )
-   {
-   newx = obj_Destination.x - 200;
-   newy = obj_Destination.y - 100;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }   
-else if ( global.choice == 6 )
-   {
-   newx = obj_Destination.x + 100;
-   newy = obj_Destination.y + 200;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 7 )
-   {
-   newx = obj_Destination.x + 200;
-   newy = obj_Destination.y - 100;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 8 )
-   {
-   newx = obj_Destination.x - 100;
-   newy = obj_Destination.y + 200;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else
-   {
-   speed = 0;
-
-   with( obj_Destination )
-      {
-      instance_destroy();
-      }
-   }
-global.choice = 0;
-   }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with ( obj_Highlight )
-   {
-   instance_destroy()
-   }
-
-if speed=0
- highlightPossibleMoves( self.id );
+*/ 
 </string>
           </argument>
         </arguments>

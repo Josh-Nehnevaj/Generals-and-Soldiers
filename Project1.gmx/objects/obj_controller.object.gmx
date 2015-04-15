@@ -41,7 +41,7 @@ global.largeVictory=0;
 global.generalsSlain=0;
 
 //track size of army
-score=4;
+score=80;
 
 //track size of largest army achieved
 global.largestArmy=score;

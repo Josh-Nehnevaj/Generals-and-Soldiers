@@ -51,6 +51,20 @@ if room==rm_2
     board[10,1] = newUnit( 10, 1, obj_enemyGeneralBoard );
     board[10,3] = newUnit( 10, 3, obj_generalBoard );
     }
+if room==rm_3
+    {
+    board[3,0] = newUnit( 3, 0, obj_EnemyUnit );
+    board[9,0] = newUnit( 9, 0, obj_EnemyUnit );
+    board[10,0] = newUnit( 10, 0, obj_enemyGeneralBoard );
+    board[5,0] = newUnit( 5, 0, obj_generalBoard );
+    }
+if room==rm_4
+    {
+    board[3,6] = newUnit( 3, 6, obj_EnemyUnit );
+    board[9,6] = newUnit( 9, 6, obj_EnemyUnit );
+    board[10,6] = newUnit( 10, 6, obj_enemyGeneralBoard );
+    board[5,6] = newUnit( 5, 6, obj_generalBoard );
+    }
 
 </string>
           </argument>

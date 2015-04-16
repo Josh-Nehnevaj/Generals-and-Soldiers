@@ -51,56 +51,59 @@ image_alpha = 0.2;
             <kind>1</kind>
             <string>global.choice = 0;
 
-// If user selects corner
-if ( owner.xx != xx &amp;&amp; owner.yy != yy )
-   {
-   // create first destination
-   instance_create(x,y,obj_Destination)
-   // sets choice to determine second destination
-   global.choice = moveTwice( owner.xx, owner.yy, xx, yy );
-   
-   // Change the board original unit to noone
-   obj_Board.board[owner.xx,owner.yy] = noone;
-
-   // Change owner's xx and yy
-   owner.xx = xx;
-   owner.yy = yy;
-   
-   // Move toward first destination object
-   with( owner )
-      {
-      move_towards_point(obj_Destination.x, obj_Destination.y, 5);
-      }  
-   }
-// If user selects up down left or right
-else
-   {
-   // Create destination and change where object is moving
-   instance_create(x,y,obj_Destination)
-   moveOnce( owner.xx, owner.yy, xx, yy );
-   
-   // Changes the board original unit to noone
-   obj_Board.board[owner.xx,owner.yy] = noone;
-
-   // Change owner's xx and yy
-   owner.xx = xx;
-   owner.yy = yy;
-
-   // Move toward first destination object
-   with ( owner )
-      {
-      move_towards_point(obj_Destination.x,obj_Destination.y,5);
-      }
-   }
-      
-// Destroy highlighted area     
-with ( obj_Highlight )
-   {
-   instance_destroy();
-   }
-
-// Board location is set equal to owner
-obj_Board.board[xx,yy] = owner;
+if global.turn=1
+    {
+    // If user selects corner
+    if ( owner.xx != xx &amp;&amp; owner.yy != yy )
+       {
+       // create first destination
+       instance_create(x,y,obj_Destination)
+       // sets choice to determine second destination
+       global.choice = moveTwice( owner.xx, owner.yy, xx, yy );
+       
+       // Change the board original unit to noone
+       obj_Board.board[owner.xx,owner.yy] = noone;
+    
+       // Change owner's xx and yy
+       owner.xx = xx;
+       owner.yy = yy;
+       
+       // Move toward first destination object
+       with( owner )
+          {
+          move_towards_point(obj_Destination.x, obj_Destination.y, 5);
+          }  
+       }
+    // If user selects up down left or right
+    else
+       {
+       // Create destination and change where object is moving
+       instance_create(x,y,obj_Destination)
+       moveOnce( owner.xx, owner.yy, xx, yy );
+       
+       // Changes the board original unit to noone
+       obj_Board.board[owner.xx,owner.yy] = noone;
+    
+       // Change owner's xx and yy
+       owner.xx = xx;
+       owner.yy = yy;
+    
+       // Move toward first destination object
+       with ( owner )
+          {
+          move_towards_point(obj_Destination.x,obj_Destination.y,5);
+          }
+       }
+          
+    // Destroy highlighted area     
+    with ( obj_Highlight )
+       {
+       instance_destroy();
+       }
+    
+    // Board location is set equal to owner
+    obj_Board.board[xx,yy] = owner;
+    }
 </string>
           </argument>
         </arguments>

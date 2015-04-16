@@ -132,7 +132,7 @@ if (keyboard_check_pressed(ord('F')) &amp;&amp; speed=0)
     image_speed=.1667
     alarm[0]=30
     }
-
+    
 //starts animation if in motion
 if speed!=0
     image_speed=.1667
@@ -258,7 +258,8 @@ image_speed=0
    instance_destroy()
    }
 
-if speed=0
+// Units can only be selected when not moving and on their turn
+if (speed=0 &amp;&amp; global.turn=1)
  highlightPossibleMoves( self.id );
 </string>
           </argument>

@@ -39,6 +39,7 @@
       <sprite>sprites\spr_soldier4</sprite>
       <sprite>sprites\spr_soldier4Firing</sprite>
       <sprite>sprites\spr_enemyGeneral</sprite>
+      <sprite>sprites\spr_enemyGeneralFiring</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -104,7 +105,6 @@
       <object>objects\obj_restart</object>
       <object>objects\obj_quit</object>
     </objects>
-    <object>objects\object28</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

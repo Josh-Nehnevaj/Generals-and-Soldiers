@@ -353,8 +353,8 @@ with ( obj_Highlight )
    instance_destroy()
    }
 
-// Units can only be selected when not moving
-if speed=0
+// Units can only be selected when not moving and on their turn
+if (speed=0 &amp;&amp; global.turn=1)
  highlightPossibleMoves( self.id );
 </string>
           </argument>

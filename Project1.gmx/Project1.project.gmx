@@ -19,6 +19,7 @@
       <sprite>sprites\temp</sprite>
     </sprites>
     <sprites name="Buttons">
+      <sprite>sprites\spr_name</sprite>
       <sprite>sprites\sp_pause</sprite>
       <sprite>sprites\spr_gear</sprite>
       <sprite>sprites\spr_quit</sprite>
@@ -100,6 +101,7 @@
     <objects name="Buttons">
       <object>objects\obj_start</object>
       <object>objects\obj_gear</object>
+      <object>objects\obj_name</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_back</object>
       <object>objects\obj_restart</object>

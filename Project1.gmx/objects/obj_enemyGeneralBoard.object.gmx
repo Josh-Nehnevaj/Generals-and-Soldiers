@@ -299,7 +299,7 @@ else
    }
 
 // Units can only be selected when not moving and on their turn
-if (speed=0 &amp;&amp; global.turn=1)
+if (speed=0 &amp;&amp; global.turn=2)
  highlightPossibleMoves( self.id );
 </string>
           </argument>

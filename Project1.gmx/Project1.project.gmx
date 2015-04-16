@@ -29,18 +29,25 @@
     </sprites>
     <sprites name="Combat">
       <sprite>sprites\spr_enemy</sprite>
-      <sprite>sprites\spr_general</sprite>
-      <sprite>sprites\spr_generalFiring</sprite>
-      <sprite>sprites\spr_soldier1</sprite>
-      <sprite>sprites\spr_soldier1Firing</sprite>
-      <sprite>sprites\spr_soldier2</sprite>
-      <sprite>sprites\spr_soldier2Firing</sprite>
-      <sprite>sprites\spr_soldier3</sprite>
-      <sprite>sprites\spr_soldier3Firing</sprite>
-      <sprite>sprites\spr_soldier4</sprite>
-      <sprite>sprites\spr_soldier4Firing</sprite>
       <sprite>sprites\spr_enemyGeneral</sprite>
       <sprite>sprites\spr_enemyGeneralFiring</sprite>
+      <sprites name="PlayerArmy">
+        <sprite>sprites\spr_general</sprite>
+        <sprite>sprites\spr_generalReversed</sprite>
+        <sprite>sprites\spr_generalFiring</sprite>
+        <sprite>sprites\spr_soldier1</sprite>
+        <sprite>sprites\spr_soldier1Left</sprite>
+        <sprite>sprites\spr_soldier1Firing</sprite>
+        <sprite>sprites\spr_soldier2</sprite>
+        <sprite>sprites\spr_soldier2Left</sprite>
+        <sprite>sprites\spr_soldier2Firing</sprite>
+        <sprite>sprites\spr_soldier3</sprite>
+        <sprite>sprites\spr_soldier3Left</sprite>
+        <sprite>sprites\spr_soldier3Firing</sprite>
+        <sprite>sprites\spr_soldier4</sprite>
+        <sprite>sprites\spr_soldier4Left</sprite>
+        <sprite>sprites\spr_soldier4Firing</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -48,24 +55,29 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script_numSoldiers.gml</script>
-    <script>scripts\script_smallVictory.gml</script>
-    <script>scripts\script_Soldiers.gml</script>
-    <script>scripts\script_pause.gml</script>
-    <script>scripts\script_victoryOrDefeat.gml</script>
-    <script>scripts\script_highScores.gml</script>
-    <script>scripts\highlightLocation.gml</script>
-    <script>scripts\highlightPossibleMoves.gml</script>
-    <script>scripts\prevPathBlocked.gml</script>
-    <script>scripts\locationOnBoard.gml</script>
-    <script>scripts\moveDiagonal.gml</script>
-    <script>scripts\moveOnce.gml</script>
-    <script>scripts\moveTwice.gml</script>
-    <script>scripts\newUnit.gml</script>
-    <script>scripts\pathBlocked.gml</script>
-    <script>scripts\pathBlocked_new.gml</script>
     <script>scripts\getxx.gml</script>
     <script>scripts\getyy.gml</script>
+    <script>scripts\scr_flipUnit.gml</script>
+    <scripts name="Jordan">
+      <script>scripts\highlightLocation.gml</script>
+      <script>scripts\highlightPossibleMoves.gml</script>
+      <script>scripts\locationOnBoard.gml</script>
+      <script>scripts\prevPathBlocked.gml</script>
+      <script>scripts\moveDiagonal.gml</script>
+      <script>scripts\moveOnce.gml</script>
+      <script>scripts\moveTwice.gml</script>
+      <script>scripts\newUnit.gml</script>
+      <script>scripts\pathBlocked.gml</script>
+    </scripts>
+    <scripts name="Display">
+      <script>scripts\script_numSoldiers.gml</script>
+      <script>scripts\script_smallVictory.gml</script>
+      <script>scripts\script_Soldiers.gml</script>
+      <script>scripts\script_pause.gml</script>
+      <script>scripts\script_victoryOrDefeat.gml</script>
+      <script>scripts\script_highScores.gml</script>
+    </scripts>
+    <script>scripts\scr_unitShot.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -107,6 +119,7 @@
       <object>objects\obj_restart</object>
       <object>objects\obj_quit</object>
     </objects>
+    <object>objects\obj_turnControl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

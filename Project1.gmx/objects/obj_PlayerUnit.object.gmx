@@ -177,6 +177,8 @@ if (keyboard_check_pressed(ord('F')) &amp;&amp; speed=0)
     alarm[0]=30
     }
 
+scr_flipUnit(self)
+
 //starts animation if moving
 if speed!=0
     {
@@ -207,6 +209,7 @@ if speed!=0
           <argument>
             <kind>1</kind>
             <string>image_speed=0
+image_index=0
 
 if ( speed != 0 )
    {
@@ -322,14 +325,8 @@ if ( speed != 0 )
           <argument>
             <kind>1</kind>
             <string>//simulates being shot, changes formation
-if sprite_index=spr_soldier4
-    sprite_index=spr_soldier3
-else if sprite_index=spr_soldier3
-    sprite_index=spr_soldier2
-else if sprite_index=spr_soldier2
-    sprite_index=spr_soldier1
-else if sprite_index=spr_soldier1
-   instance_destroy()
+
+scr_unitShot(self)
 </string>
           </argument>
         </arguments>

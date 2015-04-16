@@ -139,6 +139,9 @@ if speed!=0
     image_speed=.1667
     global.turn=-1
     }
+    
+scr_flipUnit(self)
+    
 //else if (sprite_index!=spr_generalFiring &amp;&amp; speed = 0)
     //image_speed=0
 </string>
@@ -163,7 +166,10 @@ if speed!=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ( speed != 0 )
+            <string>image_speed=0
+image_index=0
+
+if ( speed != 0 )
    {
    global.turn=1
     if ( global.choice == 1 )
@@ -233,8 +239,6 @@ if speed!=0
        }
     global.choice = 0;
        }
-   
-image_speed=0
 </string>
           </argument>
         </arguments>

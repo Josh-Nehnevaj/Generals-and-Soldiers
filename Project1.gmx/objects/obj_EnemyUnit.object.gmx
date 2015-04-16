@@ -193,7 +193,10 @@ if (keyboard_check_pressed(ord('R')) &amp;&amp; speed=0)
 
 //starts animation if moving
 if speed!=0
+    {
     image_speed=.1667
+    global.turn=-1
+    }
 </string>
           </argument>
         </arguments>
@@ -217,76 +220,78 @@ if speed!=0
           <argument>
             <kind>1</kind>
             <string>image_speed=0
+image_index=0
 
 if ( speed != 0 )
    {
-if ( global.choice == 1 )
-   {
-   newx = obj_Destination.x + 200;
-   newy = obj_Destination.y + 100;
-   
-   moveDiagonal( newx, newy, self.id );
-   }
-else if ( global.choice == 2 )
-   {
-   newx = obj_Destination.x - 100;
-   newy = obj_Destination.y - 200;
-   
-   moveDiagonal( newx, newy, self.id );   
-   }  
-else if ( global.choice == 3 )
-   {
-   newx = obj_Destination.x - 200;
-   newy = obj_Destination.y + 100;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 4 )
-   {
-   newx = obj_Destination.x + 100;
-   newy = obj_Destination.y - 200;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 5 )
-   {
-   newx = obj_Destination.x - 200;
-   newy = obj_Destination.y - 100;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }   
-else if ( global.choice == 6 )
-   {
-   newx = obj_Destination.x + 100;
-   newy = obj_Destination.y + 200;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 7 )
-   {
-   newx = obj_Destination.x + 200;
-   newy = obj_Destination.y - 100;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else if ( global.choice == 8 )
-   {
-   newx = obj_Destination.x - 100;
-   newy = obj_Destination.y + 200;
-   
-   moveDiagonal( newx, newy, self.id ); 
-   }
-else
-   {
-   speed = 0;
-
-   with( obj_Destination )
-      {
-      instance_destroy();
-      }
-   }
-global.choice = 0;
-   }
+   global.turn=2
+    if ( global.choice == 1 )
+       {
+       newx = obj_Destination.x + 200;
+       newy = obj_Destination.y + 100;
+       
+       moveDiagonal( newx, newy, self.id );
+       }
+    else if ( global.choice == 2 )
+       {
+       newx = obj_Destination.x - 100;
+       newy = obj_Destination.y - 200;
+       
+       moveDiagonal( newx, newy, self.id );   
+       }  
+    else if ( global.choice == 3 )
+       {
+       newx = obj_Destination.x - 200;
+       newy = obj_Destination.y + 100;
+       
+       moveDiagonal( newx, newy, self.id ); 
+       }
+    else if ( global.choice == 4 )
+       {
+       newx = obj_Destination.x + 100;
+       newy = obj_Destination.y - 200;
+       
+       moveDiagonal( newx, newy, self.id ); 
+       }
+    else if ( global.choice == 5 )
+       {
+       newx = obj_Destination.x - 200;
+       newy = obj_Destination.y - 100;
+       
+       moveDiagonal( newx, newy, self.id ); 
+       }   
+    else if ( global.choice == 6 )
+       {
+       newx = obj_Destination.x + 100;
+       newy = obj_Destination.y + 200;
+       
+       moveDiagonal( newx, newy, self.id ); 
+       }
+    else if ( global.choice == 7 )
+       {
+       newx = obj_Destination.x + 200;
+       newy = obj_Destination.y - 100;
+       
+       moveDiagonal( newx, newy, self.id ); 
+       }
+    else if ( global.choice == 8 )
+       {
+       newx = obj_Destination.x - 100;
+       newy = obj_Destination.y + 200;
+       
+       moveDiagonal( newx, newy, self.id ); 
+       }
+    else
+       {
+       speed = 0;
+    
+       with( obj_Destination )
+          {
+          instance_destroy();
+          }
+       }
+    global.choice = 0;
+    }
 </string>
           </argument>
         </arguments>

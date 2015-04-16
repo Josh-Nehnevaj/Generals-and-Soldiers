@@ -115,6 +115,8 @@ global.k=y;
             <string>image_speed=0
 image_index=0
 
+global.turn=1
+
 //checks if the game was restarted or if it is new
 
 if global.restart=1

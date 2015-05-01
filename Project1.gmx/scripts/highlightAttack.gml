@@ -1,4 +1,4 @@
-var xx, yy
+var xx, yy, unit
 xx = argument0
 yy = argument1
 unit = argument2

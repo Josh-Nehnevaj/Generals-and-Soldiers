@@ -354,6 +354,10 @@ with ( obj_Highlight )
    {
    instance_destroy()
    }
+with (obj_attackHighlight )
+    {
+    instance_destroy()
+    }
 
 // Units can only be selected when not moving and on their turn
 if (speed=0 &amp;&amp; global.turn=1)

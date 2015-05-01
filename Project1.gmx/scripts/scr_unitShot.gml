@@ -10,7 +10,7 @@ if speed=0
     else if sprite_index=spr_soldier2
         sprite_index=spr_soldier1
     else if sprite_index=spr_soldier1
-       instance_destroy()
+        instance_destroy()
     else if sprite_index=spr_soldier1Left
          instance_destroy()
     else if sprite_index=spr_soldier2Left

@@ -58,8 +58,12 @@ with ( owner )
     image_speed=.1667
     alarm[0]=30
     } 
+    
+with (obj_attackHighlight )
+    instance_destroy();
+with (obj_Highlight)
+    instance_destroy();
 
-instance_destroy();
 </string>
           </argument>
         </arguments>

@@ -302,10 +302,14 @@ else
    {
    instance_destroy()
    }
+with (obj_attackHighlight )
+    {
+    instance_destroy()
+    }
 
 // Units can only be selected when not moving and on their turn
 if (speed=0 &amp;&amp; global.turn=2)
- highlightPossibleMoves( self.id );
+    highlightPossibleMoves( self.id );
 </string>
           </argument>
         </arguments>

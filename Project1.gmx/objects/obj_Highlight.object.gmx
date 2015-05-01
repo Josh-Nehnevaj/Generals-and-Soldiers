@@ -96,10 +96,14 @@ if ( owner.xx != xx &amp;&amp; owner.yy != yy )
     }
        
  // Destroy highlighted area     
- with ( obj_Highlight )
+with ( obj_Highlight )
     {
-instance_destroy();
-}
+    instance_destroy();
+    }
+with (obj_attackHighlight )
+    {
+    instance_destroy()
+    }
 
 // Board location is set equal to owner
 obj_Board.board[xx,yy] = owner;

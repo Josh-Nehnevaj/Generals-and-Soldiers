@@ -36,13 +36,23 @@ for ( i = 0; i &lt; 11; i++ )
       }
    }
 
+
+i = 49;
+repeat(50)
+   {
+   global.enemyArray[i] = 0;
+   i -= 1;
+   }
+global.enemyArrayIndex = 0;
+
 // Create object on board with location xx and yy being set to that object
-if room==rm_1
+if (room==rm_1)
     {
-    board[0,6] = newUnit( 0, 6, obj_EnemyUnit );
-    board[0,5] = newUnit( 0, 5, obj_EnemyUnit );
+    script_execute ( createEnemySoldier, 0, 6);
+    script_execute ( createEnemySoldier, 0, 5);
     board[0,1] = newUnit( 0, 1, obj_enemyGeneralBoard );
     board[0,3] = newUnit( 0, 3, obj_generalBoard );
+    script_execute( createBush, 3, 2);
     }
 if room==rm_2
     {

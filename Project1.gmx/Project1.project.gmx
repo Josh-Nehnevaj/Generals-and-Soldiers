@@ -49,6 +49,7 @@
         <sprite>sprites\spr_soldier4Firing</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_bush</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bckg_practiceGrid</background>
@@ -68,6 +69,9 @@
       <script>scripts\moveTwice.gml</script>
       <script>scripts\newUnit.gml</script>
       <script>scripts\pathBlocked.gml</script>
+      <script>scripts\highlightPossibleAttacks.gml</script>
+      <script>scripts\isEnemy.gml</script>
+      <script>scripts\highlightAttack.gml</script>
     </scripts>
     <scripts name="Display">
       <script>scripts\script_numSoldiers.gml</script>
@@ -78,6 +82,10 @@
       <script>scripts\script_highScores.gml</script>
     </scripts>
     <script>scripts\scr_unitShot.gml</script>
+    <scripts name="Creation">
+      <script>scripts\createBush.gml</script>
+      <script>scripts\createEnemySoldier.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -120,6 +128,7 @@
       <object>objects\obj_quit</object>
     </objects>
     <object>objects\obj_turnControl</object>
+    <object>objects\obj_bush</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
@@ -129,6 +138,7 @@
     <room>rooms\rm_3</room>
     <room>rooms\rm_4</room>
     <room>rooms\rm_pause</room>
+    <room>rooms\room7</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

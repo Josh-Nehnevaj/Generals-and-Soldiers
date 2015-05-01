@@ -268,7 +268,10 @@ if ( speed != 0 )
 
 // Units can only be selected when not moving and on their turn
 if (speed=0 &amp;&amp; global.turn=1)
- highlightPossibleMoves( self.id );
+    {
+    highlightPossibleMoves( self.id );
+    highlightPossibleAttacks( self.id );
+    }
 </string>
           </argument>
         </arguments>

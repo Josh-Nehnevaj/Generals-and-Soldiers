@@ -52,16 +52,20 @@
 global.currentActions++
 
 with ( owner )
+    firing ( self.id )
+/*
+with ( owner )
     {
     image_index=0
     sprite_index=spr_generalFiring
     image_speed=.1667
     alarm[0]=30
     } 
-    
-with (obj_attackHighlight )
+*/
+  
+with ( obj_attackHighlight )
     instance_destroy();
-with (obj_Highlight)
+with ( obj_Highlight )
     instance_destroy();
 
 </string>

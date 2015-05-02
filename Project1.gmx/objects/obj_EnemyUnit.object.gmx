@@ -105,6 +105,29 @@ possible_moves = 12;
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_Board.board[ xx, yy] = noone
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -297,37 +320,6 @@ if ( speed != 0 )
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//simulates being shot, changes formation
-if sprite_index=spr_soldier4
-    sprite_index=spr_soldier3
-else if sprite_index=spr_soldier3
-    sprite_index=spr_soldier2
-else if sprite_index=spr_soldier2
-    sprite_index=spr_soldier1
-else if sprite_index=spr_soldier1
-   instance_destroy()
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
@@ -363,7 +355,10 @@ with ( obj_Highlight )
 
 // Units can only be selected when not moving and on their turn
 if (speed=0 &amp;&amp; global.turn=2)
+    {
     highlightPossibleMoves( self.id );
+    highlightPossibleAttacks( self.id );
+    }
 </string>
           </argument>
         </arguments>
@@ -387,14 +382,15 @@ if (speed=0 &amp;&amp; global.turn=2)
           <argument>
             <kind>1</kind>
             <string>//increase size of army based on surviving soldiers
-if sprite_index=spr_soldier4
-    score+=4
-if sprite_index=spr_soldier3
-    score+=3
-if sprite_index=spr_soldier2
-    score+=2
-if sprite_index=spr_soldier1
-    score+=1
+if global.restart == 0
+    if sprite_index=spr_soldier4
+        score+=4
+    if sprite_index=spr_soldier3
+        score+=3
+    if sprite_index=spr_soldier2
+        score+=2
+    if sprite_index=spr_soldier1
+        score+=1
 </string>
           </argument>
         </arguments>

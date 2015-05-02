@@ -41,38 +41,46 @@ i = 49;
 repeat(50)
    {
    global.enemyArray[i] = 0;
-   i -= 1;
+   i--
    }
 global.enemyArrayIndex = 0;
+
+i = 49
+repeat(50)
+    {
+    global.friendlyArray[i] = 0;
+    i--
+    }
+global.friendlyArrayIndex= 0;
 
 // Create object on board with location xx and yy being set to that object
 if (room==rm_1)
     {
-    script_execute ( createEnemySoldier, 0, 6);
-    script_execute ( createEnemySoldier, 0, 5);
-    board[0,1] = newUnit( 0, 1, obj_enemyGeneralBoard );
-    board[0,3] = newUnit( 0, 3, obj_generalBoard );
-    script_execute( createBush, 3, 2);
+    script_execute ( createEnemyUnit, 4, 1, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 8, 4, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 10, 3, obj_enemyGeneralBoard);
+    script_execute ( createPlayerUnit, 0, 3, obj_generalBoard);
+    script_execute( createTree, 3, 2);
     }
 if room==rm_2
     {
-    board[10,6] = newUnit( 10, 6, obj_EnemyUnit );
-    board[10,5] = newUnit( 10, 5, obj_EnemyUnit );
-    board[10,1] = newUnit( 10, 1, obj_enemyGeneralBoard );
+    script_execute ( createEnemyUnit, 10, 6, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 10, 5, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 10, 1, obj_enemyGeneralBoard);
     board[10,3] = newUnit( 10, 3, obj_generalBoard );
     }
 if room==rm_3
     {
-    board[3,0] = newUnit( 3, 0, obj_EnemyUnit );
-    board[9,0] = newUnit( 9, 0, obj_EnemyUnit );
-    board[10,0] = newUnit( 10, 0, obj_enemyGeneralBoard );
+    script_execute ( createEnemyUnit, 3, 0, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 6, 0, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 10, 0, obj_enemyGeneralBoard);
     board[5,0] = newUnit( 5, 0, obj_generalBoard );
     }
 if room==rm_4
     {
-    board[3,6] = newUnit( 3, 6, obj_EnemyUnit );
-    board[9,6] = newUnit( 9, 6, obj_EnemyUnit );
-    board[10,6] = newUnit( 10, 6, obj_enemyGeneralBoard );
+    script_execute ( createEnemyUnit, 3, 6, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 9, 6, obj_EnemyUnit);
+    script_execute ( createEnemyUnit, 10, 6, obj_enemyGeneralBoard);
     board[5,6] = newUnit( 5, 6, obj_generalBoard );
     }
 

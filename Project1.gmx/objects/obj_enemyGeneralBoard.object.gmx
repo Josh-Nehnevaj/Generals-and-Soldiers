@@ -258,7 +258,7 @@ if ( speed != 0 )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//check which congratulatory message to display
+            <string>/*/check which congratulatory message to display
 if (instance_number (obj_EnemyUnit)=0)   
     global.smallVictory=0
 else
@@ -275,7 +275,7 @@ if (global.generalsSlain=4)
     }
 else
     room_goto (rm_map)
-
+*/
 </string>
           </argument>
         </arguments>
@@ -298,18 +298,46 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with ( obj_Highlight )
+            <string>if position_meeting(self.x, self.y, obj_attackHighlight)
+    {
+    //check which congratulatory message to display
+    if (instance_number (obj_EnemyUnit)=0)   
+        global.smallVictory=0
+    else
+        global.smallVictory=1
+    
+    //tracks number of generals slain    
+    global.generalsSlain++;
+    
+    //checks if victory condition achieved
+    if (global.generalsSlain=4)
+        {
+        global.largeVictory=1
+        room_goto (rm_pause)
+        }
+    else
+        room_goto (rm_map)
+        }
+    
+else
+    {
+    with (obj_attackHighlight )
+        {
+        instance_destroy()
+        }
+    }
+    
+with ( obj_Highlight )
    {
    instance_destroy()
    }
-with (obj_attackHighlight )
-    {
-    instance_destroy()
-    }
 
 // Units can only be selected when not moving and on their turn
 if (speed=0 &amp;&amp; global.turn=2)
+    {
     highlightPossibleMoves( self.id );
+    highlightPossibleAttacks( self.id );
+    }
 </string>
           </argument>
         </arguments>

@@ -124,16 +124,7 @@ image_speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//starts firing animation
-if (keyboard_check_pressed(ord('F')) &amp;&amp; speed=0)
-    {
-    image_index=0
-    sprite_index=spr_generalFiring
-    image_speed=.1667
-    alarm[0]=30
-    }
-    
-//starts animation if in motion
+            <string>//starts animation if in motion
 if speed!=0
     {
     image_speed=.1667
@@ -141,9 +132,6 @@ if speed!=0
     }
     
 scr_flipUnit(self)
-    
-//else if (sprite_index!=spr_generalFiring &amp;&amp; speed = 0)
-    //image_speed=0
 </string>
           </argument>
         </arguments>
@@ -261,7 +249,20 @@ if ( speed != 0 )
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with ( obj_Highlight )
+            <string>if position_meeting(self.x, self.y, obj_attackHighlight)
+    {
+    global.largeVictory = -1;
+    room_goto(rm_pause)
+    }
+else
+    {
+    with (obj_attackHighlight )
+        {
+        instance_destroy()
+        }
+    }
+    
+with ( obj_Highlight )
    {
    instance_destroy()
    }
@@ -332,8 +333,9 @@ if (xx==0 &amp;&amp; yy == 3)
                 if (j=3)
                     global.formation=3
                 }
-                
-            obj_Board.board[unitToCreatex, unitToCreatey] = newUnit(unitToCreatex, unitToCreatey, obj_PlayerUnit)
+             
+            script_execute( createPlayerUnit, unitToCreatex, unitToCreatey, obj_PlayerUnit );   
+            //obj_Board.board[unitToCreatex, unitToCreatey] = newUnit(unitToCreatex, unitToCreatey, obj_PlayerUnit)
             i+=4
             
             if unitToCreatey&lt;6

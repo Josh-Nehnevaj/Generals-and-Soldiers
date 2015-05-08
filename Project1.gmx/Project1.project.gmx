@@ -73,6 +73,7 @@
       <script>scripts\isEnemy.gml</script>
       <script>scripts\highlightAttack.gml</script>
       <script>scripts\isFriend.gml</script>
+      <script>scripts\scr_shotSucceeds.gml</script>
     </scripts>
     <scripts name="Display">
       <script>scripts\script_numSoldiers.gml</script>
@@ -81,6 +82,8 @@
       <script>scripts\script_pause.gml</script>
       <script>scripts\script_victoryOrDefeat.gml</script>
       <script>scripts\script_highScores.gml</script>
+      <script>scripts\displayMiss.gml</script>
+      <script>scripts\displayHit.gml</script>
     </scripts>
     <scripts name="Creation">
       <script>scripts\createTree.gml</script>
@@ -113,6 +116,8 @@
       <object>objects\obj_Destination</object>
       <object>objects\obj_Highlight</object>
       <object>objects\obj_attackHighlight</object>
+      <object>objects\obj_displayMiss</object>
+      <object>objects\obj_displayHit</object>
     </objects>
     <objects name="Explore">
       <object>objects\obj_exploreGeneral</object>

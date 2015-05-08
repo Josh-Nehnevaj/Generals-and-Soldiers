@@ -338,7 +338,15 @@ if ( speed != 0 )
           <argument>
             <kind>1</kind>
             <string>if position_meeting(self.x, self.y, obj_attackHighlight)
-    scr_unitShot(self.id)
+    {
+    if scr_shotSucceeds( distance_to_point( obj_attackHighlight.owner.x, obj_attackHighlight.owner.y ) ) == true
+        {
+        instance_create( x, y, obj_displayHit)
+        scr_unitShot(self.id)
+        }
+    else
+        instance_create( x, y, obj_displayMiss)
+    }
 
 else
     {
